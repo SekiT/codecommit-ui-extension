@@ -4,4 +4,4 @@ A Google Chrome Extension which strives to make AWS CodeCommit's Web UI better.
 
 ## Features
 
-- (TBD)
+- Place links from comment on activity page to the line on changes page
