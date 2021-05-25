@@ -5,11 +5,11 @@
   "manifest_version": 3,
   "content_scripts": [
     {
-      "matches":["https://*.console.aws.amazon.com/codesuite/codecommit/repositories/*/pull-requests/*/activity"],
+      "matches":["https://*.console.aws.amazon.com/codesuite/codecommit/repositories/*/pull-requests/*/activity*"],
       "js": ["activity.js"]
     },
     {
-      "matches": ["https://*.console.aws.amazon.com/codesuite/codecommit/repositories/*/pull-requests/*/changes"],
+      "matches": ["https://*.console.aws.amazon.com/codesuite/codecommit/repositories/*/pull-requests/*/changes*"],
       "js": ["changes.js"]
     }
   ]
