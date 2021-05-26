@@ -1,4 +1,5 @@
-const textPattern = /Comment on line (\d+) of (.*)/;
+const textPatternEn = /Comment on line (?<lineNumber>\d+) of (?<filename>.*)/;
+const textPatternJa = /(?<filename>.*)の (?<lineNumber>\d+) 行目についてコメントする/;
 
 console.log('[codecommit-ui-extension] Activity page detected');
 
@@ -7,9 +8,9 @@ const timer = window.setInterval(() => {
   if (filenameHeaders.length === 0) { return; }
   clearInterval(timer);
   filenameHeaders.forEach(header => {
-    const matchResult = textPattern.exec(header.innerText);
+    const matchResult = textPatternEn.exec(header.innerText) || textPatternJa.exec(header.innerText);
     if (!matchResult) { return; }
-    const [_, lineNumber, filename] = matchResult;
+    const { groups: { lineNumber, filename } } = matchResult;
     const a = document.createElement('a');
     a.href = `./changes?ln=${lineNumber}&fn=${filename}`;
     a.innerText = header.innerText;
