@@ -6,3 +6,4 @@ A Google Chrome Extension which strives to make AWS CodeCommit's Web UI better.
 
 - Place links from comment on activity page to the line on changes page
 - Replace full-URL links to commit with its short commit hash
+- Add background color with some padding to inline codes
